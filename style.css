@@ -5,3 +5,139 @@
     box-sizing: border-box;
 }
 
+p, h1, h2 {
+    margin: 0;
+}
+
+/*COLORS AND TYPOGRAPHY*/
+html {
+    --yellow: #F2CE6F;
+    --dark-grey: #343131;
+    --grey: #EFF0E2;
+}
+
+.big-text {
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1.2;
+    color: var(--grey);
+}
+
+.small-text {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--dark-grey);
+}
+
+.emoji {
+    font-size: 7.5rem;
+}
+
+
+/*STRUCTURE*/
+body {
+    font-family: 'Text Me One', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+main {
+    flex-grow: 1;
+    background-color: var(--yellow);
+}
+
+.container {
+    width: 98%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+
+/*HEADER*/
+header {
+    background-color: var(--dark-grey);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.header-text {
+    text-align: center;
+}
+
+
+/*SCORE-BOARD*/
+.score-board {
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+
+.score-board-title {
+    text-align: center;
+    font-weight: 300;
+    color: var(--dark-grey);
+    padding-bottom: 3vh;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.human,.computer {
+    display: flex;
+    flex-direction: column;
+    border:3px solid var(--dark-grey);
+    border-radius: 8px;
+    width: 180px;
+    height: 200px;
+    align-items: center;
+}
+
+.choice {
+    flex-grow: 1;
+}
+
+
+/*WEAPONS*/
+.weapons-title {
+    text-align: center;
+    font-weight: 300;
+    color: var(--dark-grey);
+    padding-bottom: 3vh;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.buttons > * {
+    flex-basis: 100%;
+    max-width: 200px;
+    height: 200px;
+    background-color: var(--dark-grey);
+    border: 2px solid var(--dark-grey);
+    border-radius: 8px;
+}
+
+
+/*FOOTER*/
+footer {
+    background-color: var(--dark-grey);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.footer-text {
+    text-align: center;
+    color: var(--grey);
+}
