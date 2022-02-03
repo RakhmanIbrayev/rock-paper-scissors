@@ -1,4 +1,4 @@
-const figures = ["rock", "paper", "scissors"];
+const figures = ["Rock", "Paper", "Scissors"];
 const MAX_ROUNDS = 5;
 let userPoints = 0;
 let computerPoints = 0;
@@ -11,31 +11,28 @@ function getRandomInt (max) {
     return Math.floor(Math.random() * max);
 }
 
-function formatString (myString) {
-    return myString.toLowerCase();
-}
-
 function determineWinner (figureOne, figureTwo) {
-    if (figureOne === "paper" && figureTwo === "rock" ||
-        figureOne === "scissors" && figureTwo === "paper" ||
-        figureOne === "rock" && figureTwo === "scissors") {
+    if (figureOne === "Paper" && figureTwo === "Rock" ||
+        figureOne === "Scissors" && figureTwo === "Paper" ||
+        figureOne === "Rock" && figureTwo === "Scissors") {
         return true;
     }
     return false;
 }
 
+function showRoundMessage (winner, loser) {
+    return winner + (winner === "Scissors" ? " beat " : " beats ") + loser;
+}
+
 function playOneRound (userSelection, computerSelection) {
-    let formattedUserSelection = formatString(userSelection);
-
-    if (formattedUserSelection === computerSelection) {
+    if (userSelection === computerSelection) {
         return "Draw";
-    } else if (determineWinner(formattedUserSelection, computerSelection)) {
+    } else if (determineWinner(userSelection, computerSelection)) {
         userPoints++;
-        return formattedUserSelection + " beats " + computerSelection;
+        return showRoundMessage(userSelection, computerSelection);
     }
-
     computerPoints++;
-    return computerSelection + " beats " + formattedUserSelection; 
+    return showRoundMessage(computerSelection, userSelection);
 }
 
 const scoreBoardTitle = document.querySelector(".score-board-title");
@@ -47,9 +44,9 @@ let computerSelection;
 
 
 function findWeaponEmoji (selection) {
-    if (selection === "rock") {
+    if (selection === "Rock") {
         return "✊";
-    } else if (selection === "paper") {
+    } else if (selection === "Paper") {
         return "🤚"
     }
     return "✌";
