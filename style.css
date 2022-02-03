@@ -5,8 +5,9 @@
     box-sizing: border-box;
 }
 
-p, h1, h2 {
+p, h1, h2, button {
     margin: 0;
+    padding: 0;
 }
 
 /*COLORS AND TYPOGRAPHY*/
@@ -83,7 +84,7 @@ header {
     padding-bottom: 3vh;
 }
 
-.cards {
+.players {
     display: flex;
     justify-content: center;
     gap: 3rem;
@@ -127,6 +128,26 @@ header {
     background-color: var(--dark-grey);
     border: 2px solid var(--dark-grey);
     border-radius: 8px;
+}
+
+@media (max-width: 450px) {
+    .buttons > * {
+        max-width: 100px;
+        height: 100px;
+    }
+
+    .human,.computer {
+        width: 150px;
+        height: 170px;
+    }
+
+    .players .emoji {
+        font-size: 6rem;
+    }
+
+    .buttons .emoji {
+        font-size: 4rem;
+    }
 }
 
 
