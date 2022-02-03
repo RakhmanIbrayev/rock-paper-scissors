@@ -16,11 +16,9 @@ function formatString (myString) {
 }
 
 function determineWinner (figureOne, figureTwo) {
-    if (figureOne === "paper" && figureTwo === "rock") {
-        return true;
-    } else if (figureOne === "scissors" && figureTwo === "paper") {
-        return true;
-    } else if (figureOne === "rock" && figureTwo === "scissors") {
+    if (figureOne === "paper" && figureTwo === "rock" ||
+        figureOne === "scissors" && figureTwo === "paper" ||
+        figureOne === "rock" && figureTwo === "scissors") {
         return true;
     }
     return false;
@@ -38,26 +36,6 @@ function playOneRound (userSelection, computerSelection) {
 
     computerPoints++;
     return computerSelection + " beats " + formattedUserSelection; 
-}
-
-function game () {
-    for (let i = 0; i < MAX_ROUNDS; i++) {
-        let userSelection = prompt("Enter Your Choice");
-        let computerSelection = computerPlay();
-
-        console.log(playOneRound(userSelection, computerSelection));
-        console.log("User: " + userPoints);
-        console.log("Computer: " + computerPoints);
-    }
-
-    // find a winner here, whoever has more points wins!!!
-    if (userPoints > computerPoints) {
-        console.log("Congrats, you win!!!");
-    } else if (userPoints < computerPoints) {
-        console.log("Ha-Ha, you lose");
-    } else {
-        console.log("Good game, its a draw");
-    }
 }
 
 const scoreBoardTitle = document.querySelector(".score-board-title");
